@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔗 Shortened URL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at top right, #e6f0ff, #f5f7fa);
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #4a6bdf;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .shortened-url {
+            background-color: #f0f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #4a6bdf;
+        }
+        
+        .shortened-url strong {
+            color: #4a6bdf;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .url {
+            font-family: monospace;
+            font-size: 1.1rem;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Shortened URL</h1>
+        <div class="shortened-url">
+            <p><a href="{{ shortened_url }}" target="_blank">{{ shortened_url }}</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔗 URL Shortener</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at top right, #e6f0ff, #f5f7fa);
+        }
+        
+        h1 {
+            color: #4a6bdf;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        h1::before {
+            content: "🔗 ";
+        }
+        
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        input[type="url"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5ee;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        input[type="url"]:focus {
+            border-color: #4a6bdf;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 107, 223, 0.2);
+        }
+        
+        input[type="url"]::placeholder {
+            color: #aaa;
+        }
+        
+        button {
+            background-color: #4a6bdf;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+        }
+        
+        button:hover {
+            background-color: #3a5bd9;
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button::after {
+            content: " →";
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+    <form method="POST" action="{{ url_for('index') }}">
+        <label for="long-url">✏️ Enter your long URL:</label><br>
+        <input type="url" id="long-url" name="long-url" placeholder="https://example.com/very-long-url..." required><br><br>
+        <button type="submit">Shorten URL</button>
+    </form>
+</body>
+</html>
